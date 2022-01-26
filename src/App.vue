@@ -1,19 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header></Header>
+    <b-container class="mt-5">
+      <b-row>
+        <b-col cols="10">
+          <h1>To-do</h1>
+          <hr />
+          <TodoList></TodoList>
+        </b-col>
+        <b-col cols="2">
+          <ButtonCreateTask></ButtonCreateTask>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TodoList from "@/components/TodoList";
+import Header from "@/components/templates/Header";
+import ButtonCreateTask from "@/components/ButtonCreateTask";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    TodoList,
+    Header,
+    ButtonCreateTask,
+  },
+};
 </script>
 
 <style>
@@ -23,6 +37,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
